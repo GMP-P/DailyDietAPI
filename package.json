@@ -1,0 +1,38 @@
+{
+  "name": "02--api-rest---nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "knex": "node --import tsx ./node_modules/knex/bin/cli.js --knexfile knexfile.ts",
+    "test": "vitest",
+    "build": "tsup src --out-dir build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^25.2.3",
+    "@types/supertest": "^7.2.0",
+    "sqlite3": "^5.1.7",
+    "supertest": "^7.2.2",
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.5"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^11.0.2",
+    "@fastify/rate-limit": "^10.3.0",
+    "dotenv": "^17.3.1",
+    "fastify": "^5.7.4",
+    "knex": "^3.1.0",
+    "pg": "^8.20.0",
+    "zod": "^4.3.6"
+  }
+}
