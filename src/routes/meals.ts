@@ -94,6 +94,12 @@ export async function mealsRoutes(app: FastifyInstance) {
     app.put(
         '/:id',
         {
+             config: {
+                rateLimit: {
+                    max: 20,
+                    timeWindow: '1 minute',
+                },
+            },
             preHandler: [checkSessionIdExists, getUserID],
         },
         async (request, reply) => {
@@ -141,6 +147,12 @@ export async function mealsRoutes(app: FastifyInstance) {
     app.delete(
         '/:id',
         {
+             config: {
+                rateLimit: {
+                    max: 20,
+                    timeWindow: '1 minute',
+                },
+            },
             preHandler: [checkSessionIdExists, getUserID],
         },
         async (request, reply) => {
