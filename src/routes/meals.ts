@@ -70,11 +70,10 @@ export async function mealsRoutes(app: FastifyInstance) {
             const createMealBodySchema = z.object({
                 name: z.string(),
                 description: z.string(),
-                date_and_time: z.string(),
                 is_diet: z.boolean()
             })
 
-            const { name, description, date_and_time, is_diet } = createMealBodySchema.parse(
+            const { name, description, is_diet } = createMealBodySchema.parse(
                 request.body,
             )
 
@@ -83,7 +82,6 @@ export async function mealsRoutes(app: FastifyInstance) {
                 user_id: request.userId,
                 name,
                 description,
-                date_and_time,
                 is_diet,
             })
 
